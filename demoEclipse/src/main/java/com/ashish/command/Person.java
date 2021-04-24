@@ -1,7 +1,5 @@
 package com.ashish.command;
 
-
-
 public class Person {
 
 

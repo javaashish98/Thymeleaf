@@ -21,5 +21,8 @@ public class PersonInfoProvider {
 	}
 	
 	
-
+	public int registerPerson(Person person) {
+		Person p=dao.save(person);
+		return p.getPid();
+	}
 }

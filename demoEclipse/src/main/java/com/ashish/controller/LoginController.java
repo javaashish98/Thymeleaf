@@ -26,12 +26,26 @@ public class LoginController {
 		
 	}
 	
+	
 	@PostMapping("/signin.php")
-	public String success(@ModelAttribute("person") Person person,Map<String,Object> map) {
+	public String register(@ModelAttribute("person") Person person,Map<String,Object> map) {
+		//String result=service.register(person);
+		//System.out.println(result);
+		//map.put("result", result);
+		String msg=service.register(person);
+		map.put("result", msg);
+		return "loginSuccess";
+	}
+	
+	
+	
+	@GetMapping("/show.php")
+	public String show(@ModelAttribute("person") Person person,Map<String,Object> map) {
 		//String result=service.register(person);
 		//System.out.println(result);
 		//map.put("result", result);
 		List<Person> result=service.getAllPerson();
+		
 		System.out.println(result);
 		map.put("result",result);
 		return "success";

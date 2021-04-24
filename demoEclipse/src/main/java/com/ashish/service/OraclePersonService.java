@@ -17,15 +17,21 @@ public class OraclePersonService implements PersonService {
 	@Autowired
 	private PersonInfoProvider service;
 
+	
 	@Override
 	public String register(Person person) {
 		
+		com.ashish.bo.Person personBo=new com.ashish.bo.Person();
 		
-		System.out.println(person);
+		BeanUtils.copyProperties(person,  personBo);
+		
+		
+		int result=service.registerPerson(personBo);
 		
 		
 		
-		return "Your Data is put on Oracle Database";
+		
+		return "Record of the person with person id::"+result+" Has been submitted";
 	}
 
 	@Override

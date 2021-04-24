@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -7,24 +7,24 @@
 <body>
 
 	<div align="center">
-	<form action="signin.php" method="post">
+	<form th:object="${person}" action="signin.php" method="post" >
 		
 		<table>
 			<tr>
 				<td>Person ID</td>
-				<td>    <input type="text" >           </td>
+				<td>    <input type="text" th:field="*{pid}">           </td>
 			</tr>
 			<tr>
 				<td>Person Name</td>
-				<td>    <input type="text" >           </td>
+				<td>    <input th:field="*{pname}" type="text" >           </td>
 			</tr>
 			<tr>
 				<td>Person Age</td>
-				<td>    <input type="text" >           </td>
+				<td>    <input th:field="*{age}" type="text" >           </td>
 			</tr>
 			<tr>
 				<td>Person Address</td>
-				<td>    <input type="text" >           </td>
+				<td>    <input th:field="*{padd}" type="text" >           </td>
 			</tr>
 			<tr>
 				<td colspan="2"> <input type="submit" value="Register" >
