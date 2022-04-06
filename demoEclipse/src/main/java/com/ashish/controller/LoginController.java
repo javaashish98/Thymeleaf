@@ -21,7 +21,6 @@ public class LoginController {
 	@GetMapping("/signin.php")
 	public String login(@ModelAttribute("person") Person person) {
 		
-		
 		return "login";
 		
 	}
